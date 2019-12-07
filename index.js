@@ -12,13 +12,13 @@ rl.question("Do you want to sort? ", function(answer) {
 }); */
 const Chalk = require('chalk')
 
-function bubbleSort(arr) {
+function bubbleSort(arr, logTotalPassess) {
 	len = arr.length;
 	none = 0;
 	x = 0;
 	swapsTotal = 0;
 	passes = 0;
-	while(passes < arr.length ^ 2 && none < 100) {
+	while (passes < arr.length ^ 2 && none < 100) {
 		if(arr[x] > arr[x + 1]) {
 			d = arr[x];
 			c = arr[x + 1];
@@ -36,10 +36,22 @@ function bubbleSort(arr) {
 		console.clear();
 //		console.log(arr.join(', '))
 	}
-	
+
+	if (!logTotalPassess) {
+		logTotalPassess = null;
+	}
 	console.log(arr.join(',\n'));
-	console.log('\n\nIn ' + passes + ' Passes');
-	console.log('\n\nIn ' + swapsTotal + ' Swaps');
+	if (logTotalPassess == true) {
+	console.log(Chalk.greenBright("List Sorted!"))
+	console.log(Chalk.cyanBright('\n\nIn ' + passes + ' Passes'));
+	console.log(Chalk.cyanBright('\n\nIn ' + swapsTotal + ' Swaps'));
+	} else= if (logTotalPassess == false || (typeof(logTotalPassess) == null)) {
+
+	}
 }
 let arr = [2, 1]
-bubbleSort(arr)
+bubbleSort(arr, true)
+
+/*
+	Collaboration between @asadhumayun and @rossjames
+*/
