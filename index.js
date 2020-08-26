@@ -12,6 +12,13 @@ rl.question("Do you want to sort? ", function(answer) {
 }); */
 const Chalk = require('chalk')
 
+/**
+    * Sorts an array by utilising the bubble sort search algoithm
+    * @param {Array<Number>} arr Array (of numbers) to be sorted
+    * @param {boolean} logTotalPasses Whether or not to log the total amount of passes 
+    * @returns {Array<Number>} arr Sorted array
+*/
+
 function bubbleSort(arr, logTotalPassess) {
 	len = arr.length;
 	none = 0;
@@ -26,32 +33,33 @@ function bubbleSort(arr, logTotalPassess) {
 			arr[x + 1] = d;
 		} else {
 			none++;
-		}
+		};
 		x++;
 		swapsTotal++;
 		if(x == len + len) {
 			x = 0;
 			passes++;
-		}
+		};
 		console.clear();
-//		console.log(arr.join(', '))
-	}
+//		console.log(arr.join(', '));
+	};
 
 	if (!logTotalPassess) {
 		logTotalPassess = null;
-	}
+	};
 	console.log(arr.join(',\n'));
 	if (logTotalPassess == true) {
-	console.log(Chalk.greenBright("List Sorted!"))
+	console.log(Chalk.greenBright("List Sorted!"));
 	console.log(Chalk.cyanBright('\n\nIn ' + passes + ' Passes'));
 	console.log(Chalk.cyanBright('\n\nIn ' + swapsTotal + ' Swaps'));
-	} else= if (logTotalPassess == false || (typeof(logTotalPassess) == null)) {
+	} else if (logTotalPassess == false || (typeof(logTotalPassess) == null)) {
 
-	}
-}
-let arr = [2, 1]
-bubbleSort(arr, true)
+	};
+};
+
+let arr = [2, 34, 1];
+bubbleSort(arr, true);
 
 /*
-	Collaboration between @asadhumayun and @rossjames
+	Collaboration between @almostStatic and @PixelNinja
 */
